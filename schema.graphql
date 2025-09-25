@@ -1,0 +1,23 @@
+type Token @entity {
+  id: ID!                
+  creator: Bytes!        
+  name: String!         
+  symbol: String!        
+  ip: IPAsset            
+  createdAt: BigInt!     
+}
+
+type IPAsset @entity {
+  id: ID!                
+  verified: Boolean!     
+  tokens: [Token!]! @derivedFrom(field: "ip")
+  verifiedAt: BigInt
+}
+
+type TokenPrice @entity(timeseries: true) {
+  id: Int8!
+  timestamp: Timestamp!
+  token: Token!
+  priceUSD: BigInt!
+  priceNative: BigInt!
+}
