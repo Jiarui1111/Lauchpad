@@ -1,4 +1,4 @@
-import { IPTokenDeployed } from "../../generated/IPWorld/IPWorld"
+import { IPTokenDeployed } from "../../generated/Launchpad/Launchpad"
 import { Token } from "../../generated/schema"
 
 export function handleIPTokenDeployed(event: IPTokenDeployed): void {
@@ -8,8 +8,6 @@ export function handleIPTokenDeployed(event: IPTokenDeployed): void {
   token.name = event.params.name
   token.symbol = event.params.symbol
   token.createdAt = event.block.timestamp
-
-  token.ip = null
 
   token.save()
 }

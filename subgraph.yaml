@@ -22,4 +22,4 @@ dataSources:
       eventHandlers:
         - event: IPTokenDeployed(indexed address,indexed address,string,string)
           handler: handleIPTokenDeployed
-      file: ./src/mappings/mapping.ts
+      file: ./src/mappings/Launchpad.ts
